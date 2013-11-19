@@ -21,7 +21,6 @@ public class PlayState extends FlxState {
 	// public EnemySprite jimbo;
 	FlxTilemap floor;
 	FlxTilemap walls;
-	//LOLOLOLOL
 
 	TiledMap map;
 	FlxTilemap _level1;
