@@ -1,0 +1,19 @@
+INDEX VERSION 1.126+/home/weston/Documents/programming/libGDXware/flixelgame/.metadata/.plugins/org.eclipse.jdt.core
+1022003584.index
+1791498496.index
+1198206356.index
+1514218975.index
+3317286875.index
+1989682271.index
+4267884898.index
+2409005450.index
+4165068036.index
+1737441395.index
+251265939.index
+3004153731.index
+1928036885.index
+3829351191.index
+1714592054.index
+3655037021.index
+896734524.index
+664202523.index
