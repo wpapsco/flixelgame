@@ -1,8 +1,11 @@
 package com.yourname.flixnet;
 
+import org.flixel.FlxButton;
 import org.flixel.FlxG;
 import org.flixel.FlxState;
 import org.flixel.FlxTilemap;
+import org.flixel.FlxU;
+import org.flixel.event.IFlxButton;
 
 import com.badlogic.gdx.maps.MapLayers;
 import com.badlogic.gdx.maps.tiled.TiledMap;
@@ -10,9 +13,10 @@ import com.badlogic.gdx.maps.tiled.TmxMapLoader;
 import com.badlogic.gdx.maps.tiled.TmxMapLoader.Parameters;
 
 public class PlayState extends FlxState {
+	//this is a comment from will
 	static final int TOP_Y = 480;
 	static final int TOP_X = 800;
-
+	
 	private static String MAP = "map1.tmx";
 	private static String ImgTiles = "layer1floortiles.png";
 	private static String WallTiles = "layer2walls.png";
@@ -29,7 +33,6 @@ public class PlayState extends FlxState {
 
 	@Override
 	public void create() {
-		// FlxG.worldBounds = new FlxRect(0,0,700,700);
 		System.out.println("creates");
 		map = new TiledMap();
 		TmxMapLoader loader = new TmxMapLoader();
@@ -40,7 +43,6 @@ public class PlayState extends FlxState {
 
 		FlxG.setBgColor(0x00000000);
 		FlxG.width = FlxG.camera.viewportWidth;
-
 		
 		FlxG.width = TOP_X;
 		FlxG.height = TOP_Y;
@@ -69,7 +71,6 @@ public class PlayState extends FlxState {
 		super.destroy();
 		_level1 = null;
 		map.dispose();
-
 	}
 
 	@Override
