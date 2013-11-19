@@ -68,22 +68,22 @@ public class LinkSprite extends FlxSprite {
 				this.play(facing);
 			}
 		}else{
-			if(controller.getAxis(Ouya.AXIS_LEFT_Y) == 1){
+			if(controller.getAxis(Ouya.AXIS_LEFT_Y) >= .5){
 				this.y -= 80 * Gdx.graphics.getDeltaTime();
 				this.play("walkUp");
 				facing = "sUp";
 			}
-			else if(controller.getAxis(Ouya.AXIS_LEFT_Y) == -1){
+			else if(controller.getAxis(Ouya.AXIS_LEFT_Y) <= -.5){
 				this.y += 80 * Gdx.graphics.getDeltaTime();
 				this.play("walkDown");
 				facing = "sDown";
 			}
-			else if(controller.getAxis(Ouya.AXIS_LEFT_X) == 1){
+			else if(controller.getAxis(Ouya.AXIS_LEFT_X) >= .5){
 				this.x -= 80 * Gdx.graphics.getDeltaTime();
 				this.play("walkLeft");
 				facing = "sLeft";
 			}
-			else if(controller.getAxis(Ouya.AXIS_LEFT_X) == -1){
+			else if(controller.getAxis(Ouya.AXIS_LEFT_X) <= -.5){
 				this.x += 80 * Gdx.graphics.getDeltaTime();
 				this.play("walkRight");
 				facing = "sRight";
