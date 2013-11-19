@@ -28,7 +28,8 @@ public class PlayState extends FlxState{
 		}
 		
 		FlxG.camera.width = FlxG.width / 2;
-		FlxCamera camera = new FlxCamera(FlxG.screenWidth / 2, 0, FlxG.width / 2, FlxG.height);
+		FlxCamera camera = new FlxCamera(0, 0, FlxG.width/2, FlxG.height);
+		camera.x = 800/2;
 		FlxG.addCamera(camera);
 		
 		sprite.x = 16;
