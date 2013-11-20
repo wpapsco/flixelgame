@@ -8,9 +8,6 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.controllers.Controller;
 import com.badlogic.gdx.controllers.mappings.Ouya;
 
-enum Direction {
-	UP, DOWN, LEFT, RIGHT
-}
 
 public class LinkSprite extends FlxSprite {
 	private boolean isIdle = true;

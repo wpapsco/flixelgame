@@ -12,23 +12,25 @@ public class TitleState extends FlxState {
 	Controller controller;
 
 	public TitleState() {
-		// TODO Auto-generated constructor stub
+		
 	}
 
 	@Override
 	public void create() {
 		PlayState game = new PlayState();
-		FlxButton button = new FlxButton(100, 100, "Start", new IFlxButton(){
+		FlxButton button = new FlxButton(100, 100, "Start", new IFlxButton() {
 			@Override
-			public void callback(){
+			public void callback() {
 				FlxG.switchState(new PlayState());
 			}
 		});
 		
 		add(button);
-//		if(controller.getButton(Ouya.BUTTON_O)){
-//			FlxG.switchState(new PlayState());
-//		}
+		if (controller != null) {
+			if(controller.getButton(Ouya.BUTTON_O)){
+				FlxG.switchState(new PlayState());
+			}
+		}
 	}
 
 }

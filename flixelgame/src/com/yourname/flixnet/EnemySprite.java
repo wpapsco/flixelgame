@@ -23,27 +23,27 @@ public class EnemySprite extends FlxSprite {
 	}
 	
 	@Override
-	public void update(){
+	public void update() {
 		
 	}
 	
-	public void hunt(LinkSprite hero){
-		if(hero.y+10 < this.y){
+	public void hunt(FlxSprite hero) {
+		if (hero.y+10 < this.y) {
 			this.y -= 60 * Gdx.graphics.getDeltaTime();
 			this.play("walkUp");
 			facing = "sUp";
 		}
-		else if(hero.y-10 > this.y){
+		else if (hero.y-10 > this.y) {
 			this.y += 60 * Gdx.graphics.getDeltaTime();
 			this.play("walkDown");
 			facing = "sDown";
 		}
-		if(hero.x+10 < this.x){
+		if (hero.x+10 < this.x) {
 			this.x -= 60 * Gdx.graphics.getDeltaTime();
 			this.play("walkLeft");
 			facing = "sLeft";
 		}
-		else if(hero.x-10 > this.x){
+		else if (hero.x-10 > this.x) {
 			this.x += 60 * Gdx.graphics.getDeltaTime();
 			this.play("walkRight");
 			facing = "sRight";
@@ -51,20 +51,4 @@ public class EnemySprite extends FlxSprite {
 			this.play(facing);
 		}
 	}
-
-	public EnemySprite(float X) {
-		super(X);
-		// TODO Auto-generated constructor stub
-	}
-
-	public EnemySprite(float X, float Y) {
-		super(X, Y);
-		// TODO Auto-generated constructor stub
-	}
-
-	public EnemySprite(float X, float Y, String SimpleGraphic) {
-		super(X, Y, SimpleGraphic);
-		// TODO Auto-generated constructor stub
-	}
-
 }
