@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path="gen"/>
+	<classpathentry kind="con" path="com.android.ide.eclipse.adt.ANDROID_FRAMEWORK"/>
+	<classpathentry exported="true" kind="con" path="com.android.ide.eclipse.adt.LIBRARIES"/>
+	<classpathentry combineaccessrules="false" exported="true" kind="src" path="/FlixNet"/>
+	<classpathentry exported="true" kind="lib" path="/FlixNet/libs/gdx.jar" sourcepath="/FlixNet/libs/gdx-sources.jar"/>
+	<classpathentry exported="true" kind="lib" path="/FlixNet/libs/gdx-freetype.jar" sourcepath="/FlixNet/libs/gdx-freetype-sources.jar"/>
+	<classpathentry exported="true" kind="lib" path="libs/gdx-backend-android.jar" sourcepath="libs/gdx-backend-android-sources.jar"/>
+	<classpathentry exported="true" kind="lib" path="/FlixNet/libs/flixel-core.jar" sourcepath="/FlixNet/libs/flixel-core-sources.jar"/>
+	<classpathentry exported="true" kind="lib" path="libs/flixel-android.jar" sourcepath="libs/flixel-android-sources.jar"/>
+	<classpathentry kind="lib" path="libs/gdx-controllers-android.jar"/>
+	<classpathentry kind="lib" path="libs/gdx-controllers.jar"/>
+	<classpathentry exported="true" kind="con" path="com.android.ide.eclipse.adt.DEPENDENCIES"/>
+	<classpathentry kind="output" path="bin/classes"/>
+</classpath>

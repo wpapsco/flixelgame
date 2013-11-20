@@ -13,15 +13,15 @@ public class PlayState extends FlxState {
 	static final int TOP_Y = 480;
 	static final int TOP_X = 800;
 
-	private static String MAP = "map1.tmx";
+	
 	private static String ImgTiles = "layer1floortiles.png";
 	private static String WallTiles = "layer2walls.png";
+	private static String MAP = "map1.tmx";
 
 	public LinkSprite hero;
 	// public EnemySprite jimbo;
 	FlxTilemap floor;
 	FlxTilemap walls;
-	//LOLOLOLOL
 
 	TiledMap map;
 	FlxTilemap _level1;
@@ -52,8 +52,8 @@ public class PlayState extends FlxState {
 
 		hero = new LinkSprite();
 
-		hero.x = 16;
-		hero.y = 16;
+		hero.x = 64;
+		hero.y = 64;
 		// MapLayers layers = map.getLayers();
 		_level1 = new FlxTilemap();
 		_level1wall = new FlxTilemap();
