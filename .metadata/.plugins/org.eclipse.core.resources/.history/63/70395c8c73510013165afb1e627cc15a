@@ -1,0 +1,16 @@
+import org.flixel.FlxState;
+
+
+public class TitleState extends FlxState {
+
+	public TitleState() {
+		// TODO Auto-generated constructor stub
+	}
+
+	@Override
+	public void create() {
+		// TODO Auto-generated method stub
+
+	}
+
+}
