@@ -17,12 +17,13 @@ public class PlayState extends FlxState {
 	static final int TOP_Y = 480;
 	static final int TOP_X = 800;
 	
-	private static String MAP = "map1.tmx";
+	
 	private static String ImgTiles = "layer1floortiles.png";
 	private static String WallTiles = "layer2walls.png";
+	private static String MAP = "map1.tmx";
 
 	public LinkSprite hero;
-	// public EnemySprite jimbo;
+	public EnemySprite jimbo;
 	FlxTilemap floor;
 	FlxTilemap walls;
 
@@ -52,9 +53,12 @@ public class PlayState extends FlxState {
 
 
 		hero = new LinkSprite();
+		jimbo = new EnemySprite();
 
-		hero.x = 16;
-		hero.y = 16;
+		hero.x = 64;
+		hero.y = 64;
+		jimbo.x = 64;
+		jimbo.y = 100;
 		// MapLayers layers = map.getLayers();
 		_level1 = new FlxTilemap();
 		_level1wall = new FlxTilemap();
@@ -64,6 +68,7 @@ public class PlayState extends FlxState {
 		add(_level1);
 		add(_level1wall);
 		add(hero);
+		add(jimbo);
 		
 	}
 
@@ -77,7 +82,9 @@ public class PlayState extends FlxState {
 	public void update() {
 		super.update();
 		FlxG.collide(hero, _level1wall);
+		FlxG.collide(jimbo, _level1wall);
 		FlxG.collide(hero.emitter, _level1wall);
+		jimbo.hunt(hero);
 		FlxG.camera.scroll.x = hero.x-(TOP_X/4);
 		FlxG.camera.scroll.y = hero.y-(TOP_Y/4);
 		FlxG.camera.setBounds( FlxG.camera.scroll.x, FlxG.camera.scroll.y,FlxG.width,FlxG.height, true );
