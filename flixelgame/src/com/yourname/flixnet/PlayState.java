@@ -83,6 +83,7 @@ public class PlayState extends FlxState {
 		super.update();
 		FlxG.collide(hero, _level1wall);
 		FlxG.collide(jimbo, _level1wall);
+		FlxG.collide(hero.emitter, _level1wall);
 		jimbo.hunt(hero);
 		FlxG.camera.scroll.x = hero.x-(TOP_X/4);
 		FlxG.camera.scroll.y = hero.y-(TOP_Y/4);
