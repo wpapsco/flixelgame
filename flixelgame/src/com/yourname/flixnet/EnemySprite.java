@@ -27,24 +27,25 @@ public class EnemySprite extends FlxSprite {
 		
 	}
 	
-	public void hunt(LinkSprite hero){
+	public void hunt(FlxSprite hero){
+		float speed = 60 * Gdx.graphics.getDeltaTime();
 		if(hero.y+10 < this.y){
-			this.y -= 60 * Gdx.graphics.getDeltaTime();
+			this.y -= speed;
 			this.play("walkUp");
 			facing = "sUp";
 		}
 		else if(hero.y-10 > this.y){
-			this.y += 60 * Gdx.graphics.getDeltaTime();
+			this.y += speed;
 			this.play("walkDown");
 			facing = "sDown";
 		}
 		if(hero.x+10 < this.x){
-			this.x -= 60 * Gdx.graphics.getDeltaTime();
+			this.x -= speed;
 			this.play("walkLeft");
 			facing = "sLeft";
 		}
 		else if(hero.x-10 > this.x){
-			this.x += 60 * Gdx.graphics.getDeltaTime();
+			this.x += speed;
 			this.play("walkRight");
 			facing = "sRight";
 		}else{
