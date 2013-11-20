@@ -1,10 +1,11 @@
 package com.yourname.flixnet;
 import org.flixel.FlxG;
 import org.flixel.FlxSprite;
+import org.flixel.FlxU;
 
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.InputProcessor;
 import com.badlogic.gdx.controllers.Controller;
-import com.badlogic.gdx.controllers.ControllerListener;
 import com.badlogic.gdx.controllers.mappings.Ouya;
 
 enum Direction {
@@ -12,9 +13,10 @@ enum Direction {
 }
 
 public class LinkSprite extends FlxSprite {
-	Direction direction;
+	Direction direction = Direction.IDLE;
 	String facing;
 	Controller controller;
+	boolean[] pressedKeys = {false, false, false, false}; 
 
 	public LinkSprite() {
 		facing = "sDown";
@@ -29,39 +31,31 @@ public class LinkSprite extends FlxSprite {
 		this.addAnimation("walkUp", new int[]{4,5,6,7}, 10);
 		this.addAnimation("walkRight", new int[]{8,9,10,11}, 10);
 		this.addAnimation("walkLeft", new int[]{12,13,14,15}, 10);
-		
 	}
 	
 	private void checkMovement() {
-		if(controller == null){
-			if(FlxG.keys.UP){
+		if (controller == null) {
+			if (FlxG.keys.UP) {
 				direction = Direction.UP;
-			}
-			else if(FlxG.keys.DOWN){
+			} else if (FlxG.keys.DOWN) {
 				direction = Direction.DOWN;
-			}
-			else if(FlxG.keys.LEFT){
+			} else if (FlxG.keys.LEFT) {
 				direction = Direction.LEFT;
-			}
-			else if(FlxG.keys.RIGHT){
+			} else if (FlxG.keys.RIGHT) {
 				direction = Direction.RIGHT;
-			}
-			else{
+			} else {
 				direction = Direction.IDLE;
 			}
 		}else{
-			if(controller.getAxis(Ouya.AXIS_LEFT_Y) >= .5){
+			if (controller.getAxis(Ouya.AXIS_LEFT_Y) >= .5) {
 				direction = Direction.UP;
-			}
-			else if(controller.getAxis(Ouya.AXIS_LEFT_Y) <= -.5){
+			} else if (controller.getAxis(Ouya.AXIS_LEFT_Y) <= -.5) {
 				direction = Direction.DOWN;
-			}
-			else if(controller.getAxis(Ouya.AXIS_LEFT_X) >= .5){
+			} else if (controller.getAxis(Ouya.AXIS_LEFT_X) >= .5) {
 				direction = Direction.LEFT;
-			}
-			else if(controller.getAxis(Ouya.AXIS_LEFT_X) <= -.5){
+			} else if (controller.getAxis(Ouya.AXIS_LEFT_X) <= -.5) {
 				direction = Direction.RIGHT;
-			}else{
+			} else {
 				direction = Direction.IDLE;
 			}
 		}
@@ -70,7 +64,7 @@ public class LinkSprite extends FlxSprite {
 	private void doMovement() {
 		super.update();
 		float movementAmount = 80 * Gdx.graphics.getDeltaTime();
-		switch(direction){
+		switch(direction) {
 		case UP:
 			this.y -= movementAmount;
 			this.play("walkUp");
@@ -102,5 +96,4 @@ public class LinkSprite extends FlxSprite {
 		checkMovement();
 		doMovement();
 	}
-
 }
