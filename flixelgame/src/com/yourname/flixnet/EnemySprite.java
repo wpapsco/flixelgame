@@ -1,14 +1,18 @@
 package com.yourname.flixnet;
 
+import org.flixel.FlxPath;
+import org.flixel.FlxPoint;
 import org.flixel.FlxSprite;
+import org.flixel.FlxTilemap;
 
 import com.badlogic.gdx.Gdx;
 
 public class EnemySprite extends FlxSprite {
-	String facing;
+	String facing = "sDown";
+	FlxTilemap collisionMap;
 
-	public EnemySprite() {
-		facing = "sDown";
+	public EnemySprite(FlxTilemap collisionMap) {
+		this.collisionMap = collisionMap;
 		this.loadGraphic("mage2.png",true,true,8,13);
 		
 		this.addAnimation("sDown", new int[]{0}, 0);
