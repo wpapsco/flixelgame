@@ -9,10 +9,8 @@ import com.badlogic.gdx.Gdx;
 
 public class EnemySprite extends FlxSprite {
 	String facing = "sDown";
-	FlxTilemap collisionMap;
 
-	public EnemySprite(FlxTilemap collisionMap) {
-		this.collisionMap = collisionMap;
+	public EnemySprite() {
 		this.loadGraphic("mage2.png",true,true,8,13);
 		
 		this.addAnimation("sDown", new int[]{0}, 0);

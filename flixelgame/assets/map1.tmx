@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="orthogonal" width="100" height="100" tilewidth="16" tileheight="16">
+ <properties>
+  <property name="StartX" value="10"/>
+  <property name="StartY" value="10"/>
+ </properties>
  <tileset firstgid="1" name="layer1floortiles" tilewidth="16" tileheight="16">
   <image source="layer1floortiles.png" width="112" height="16"/>
  </tileset>

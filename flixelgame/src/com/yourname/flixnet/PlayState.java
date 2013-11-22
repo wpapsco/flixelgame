@@ -27,19 +27,19 @@ public class PlayState extends FlxState {
 	FlxTilemap floor;
 	FlxTilemap walls;
 
-	TiledMap map;
+	PropertyTiledMap map;
 	FlxTilemap _level1;
 	FlxTilemap _level1wall;
 	float unitScale = 16 / 2f;
 
 	@Override
 	public void create() {
-		map = new TiledMap();
-		TmxMapLoader loader = new TmxMapLoader();
+		PropertyMapLoader loader = new PropertyMapLoader();
 		Parameters args = new Parameters();
 		args.yUp = false;
 		
-		map = loader.load(MAP, args);
+		map = loader.loadProperties(MAP, args);
+		System.out.println(map.properties.get("StartX"));
 
 		FlxG.setBgColor(0x00000000);
 		FlxG.width = FlxG.camera.viewportWidth;
@@ -58,9 +58,9 @@ public class PlayState extends FlxState {
 		// MapLayers layers = map.getLayers();
 		_level1 = new FlxTilemap();
 		_level1wall = new FlxTilemap();
-		_level1.loadMap(FlxTilemap.tiledmapToCSV(map, "Ground"), ImgTiles, 16, 16,FlxTilemap.OFF, 1);
-		_level1wall.loadMap(FlxTilemap.tiledmapToCSV(map, "Walls"), WallTiles, 16, 16,FlxTilemap.OFF, 8);
-		jimbo = new EnemySprite(_level1wall);
+		_level1.loadMap(FlxTilemap.tiledmapToCSV(map.map, "Ground"), ImgTiles, 16, 16,FlxTilemap.OFF, 1);
+		_level1wall.loadMap(FlxTilemap.tiledmapToCSV(map.map, "Walls"), WallTiles, 16, 16,FlxTilemap.OFF, 8);
+		jimbo = new EnemySprite();
 		jimbo.x = 64*2;
 		jimbo.y = 64*2;
 		
@@ -73,7 +73,7 @@ public class PlayState extends FlxState {
 	public void destroy() {
 		super.destroy();
 		_level1 = null;
-		map.dispose();
+		map.map.dispose();
 	}
 
 	@Override
