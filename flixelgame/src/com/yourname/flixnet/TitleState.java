@@ -12,14 +12,14 @@ public class TitleState extends FlxState {
 	Controller controller;
 
 	public TitleState() {
-		// TODO Auto-generated constructor stub
+		
 	}
 
 	@Override
 	public void create() {
-		FlxButton button = new FlxButton(100, 100, "Start", new IFlxButton(){
+		FlxButton button = new FlxButton(100, 100, "Start", new IFlxButton() {
 			@Override
-			public void callback(){
+			public void callback() {
 				FlxG.switchState(new PlayState());
 			}
 		});
