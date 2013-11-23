@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="32" height="32" tilewidth="16" tileheight="16">
+ <tileset firstgid="1" name="groundTiles" tilewidth="16" tileheight="16">
+  <image source="groundTiles.png" trans="aaaa7f" width="32" height="16"/>
+ </tileset>
+ <tileset firstgid="3" name="wallTiles" tilewidth="16" tileheight="16">
+  <image source="wallTiles.png" trans="aaaa7f" width="64" height="48"/>
+ </tileset>
+ <layer name="Ground" width="32" height="32">
+  <data encoding="base64" compression="zlib">
+   eJztztEJAAAIAlHbf+lWKBGCuAd+nyWpQnOk2u4P+vS/9TcfvvanH6776S9JV93JFwAAAHgagBMBDA==
+  </data>
+ </layer>
+ <layer name="Walls" width="32" height="32">
+  <data encoding="base64" compression="zlib">
+   eJztlFELgzAMhPPgls1s/v+fuwwsHAe2a7rH++AwRNNejDbMzFNb6pa6U9zLPVLP1G51vnsHrYVxL/dKvVMHeJolziuuhXEv11h5D16oYdDbLDF+ZIhbvQ/8rmb2Q8LqfVRmx3ut9L8yO/QTRQ9cw2fBzDqVGTTfTXwWOMku/FX7b7UonAnf846/f/xLv3i98ieEEEIIIcSID/lTBK4=
+  </data>
+ </layer>
+</map>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="40" height="20" tilewidth="16" tileheight="16">
+ <tileset firstgid="1" name="layer1floortiles" tilewidth="16" tileheight="16">
+  <image source="../Tilesets/layer1floortiles.png" width="112" height="16"/>
+ </tileset>
+ <tileset firstgid="8" name="layer2walls" tilewidth="16" tileheight="16">
+  <image source="../Tilesets/layer2walls.png" width="160" height="16"/>
+ </tileset>
+ <tileset firstgid="18" name="groundTiles" tilewidth="16" tileheight="16">
+  <image source="../Tilesets/groundTiles.png" width="32" height="16"/>
+ </tileset>
+ <tileset firstgid="20" name="wallTiles" tilewidth="16" tileheight="16">
+  <image source="../Tilesets/wallTiles.png" width="64" height="48"/>
+ </tileset>
+ <layer name="floor" width="40" height="20">
+  <data encoding="base64" compression="zlib">
+   eJzt1isOACAMRMGWr+f+h6WmjgpM2ZAVTzNJkw0qInrZSuz0frGq1UB93RrWBPWh35c++pB9mcZo+7xoA7OM0fZ50Qa+8qHfF8lGH32IPv7//rnvBsqJJuQ=
+  </data>
+ </layer>
+ <layer name="undergrowth" width="40" height="20">
+  <data encoding="base64" compression="zlib">
+   eJztVUEOgDAI2x/2/796MlkIhSKwGWMTM5UBtQwc48dbMJd1Art1VXNZ+Wg8Lb9ObisHJr6npxU/A5TT48Do16XrHVveWxw1P+05y0WzMbWP7I9C6pM9U119zNRmV++ivAOs1izaDbZ/NT+vXzrB9LTcn+UXmctRXSu4MfNZvkc6VtcWfXvkf6Dx6+hr7/xb2iF7FVhdnuQ/PYu+gAtpSQos
+  </data>
+ </layer>
+ <layer name="walls" width="40" height="20">
+  <data encoding="base64" compression="zlib">
+   eJzjYmBg4CIRSwKxFJ0wyD5SAEi9LBDL0QmT4z56gpHoPglyHIJDLy3cJ0Oimfj0Dtf4pSQOybGPVPWkxCElfqFHfFGSHumdnmCA2DAdqPyBL0yR3T4Y8y+y2wej+yixbyi4j5r1FzH2kaqemvUXMfbRUj2lgBz3iQKxGJ0wqW17erfvAd9QDu0=
+  </data>
+ </layer>
+ <layer name="objects" width="40" height="20">
+  <data encoding="base64" compression="zlib">
+   eJxjYBj8QBCJzY8mx49DHT2BABKbD02OD4e6UTAKRsEoIAWgl33YxHno4RAcAL3swyY+kO4bBaNgFAw9MNr+G74AAGSIAUs=
+  </data>
+ </layer>
+</map>

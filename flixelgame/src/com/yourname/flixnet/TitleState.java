@@ -10,6 +10,7 @@ import com.badlogic.gdx.controllers.mappings.Ouya;
 
 public class TitleState extends FlxState {
 	Controller controller;
+	LevelState game;
 
 	public TitleState() {
 		
@@ -17,15 +18,23 @@ public class TitleState extends FlxState {
 
 	@Override
 	public void create() {
-		PlayState game = new PlayState();
-		FlxButton button = new FlxButton(100, 100, "Start", new IFlxButton() {
+		game = new LevelState("groundTiles.png", "wallTiles.png", "innawoods.tmx");
+		FlxButton button = new FlxButton(100, 100, "Start Level 1", new IFlxButton() {
 			@Override
 			public void callback() {
 				FlxG.switchState(new PlayState());
 			}
 		});
 		
+		FlxButton button2 = new FlxButton(100, 130, "Start Level 2", new IFlxButton() {
+			@Override
+			public void callback() {
+				FlxG.switchState(game);
+			}
+		});
+		
 		add(button);
+		add(button2);
 		if (controller != null) {
 			if(controller.getButton(Ouya.BUTTON_O)){
 				FlxG.switchState(new PlayState());
