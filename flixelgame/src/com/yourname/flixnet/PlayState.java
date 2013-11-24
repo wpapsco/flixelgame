@@ -1,5 +1,6 @@
 package com.yourname.flixnet;
 
+import org.flixel.FlxBasic;
 import org.flixel.FlxButton;
 import org.flixel.FlxG;
 import org.flixel.FlxState;
@@ -11,6 +12,8 @@ import com.badlogic.gdx.maps.MapLayers;
 import com.badlogic.gdx.maps.tiled.TiledMap;
 import com.badlogic.gdx.maps.tiled.TmxMapLoader;
 import com.badlogic.gdx.maps.tiled.TmxMapLoader.Parameters;
+import com.yourname.flixnet.mapping.PropertyMapLoader;
+import com.yourname.flixnet.mapping.PropertyTiledMap;
 
 public class PlayState extends FlxState {
 	//this is a comment from will

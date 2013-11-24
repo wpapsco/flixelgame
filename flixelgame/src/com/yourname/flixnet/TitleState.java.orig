@@ -17,10 +17,15 @@ public class TitleState extends FlxState {
 
 	@Override
 	public void create() {
+<<<<<<< HEAD
+		FlxButton button = new FlxButton(100, 100, "Start", new IFlxButton(){
+=======
+		PlayState game = new PlayState();
 		FlxButton button = new FlxButton(100, 100, "Start", new IFlxButton() {
+>>>>>>> West_Dev
 			@Override
 			public void callback() {
-				FlxG.switchState(new TestGameState());
+				FlxG.switchState(new PlayState());
 			}
 		});
 		

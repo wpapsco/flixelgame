@@ -1,4 +1,4 @@
-package com.yourname.flixnet;
+package com.yourname.flixnet.mapping;
 import java.util.Hashtable;
 
 import com.badlogic.gdx.maps.tiled.TiledMap;
