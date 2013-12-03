@@ -5,14 +5,17 @@ import org.flixel.FlxG;
 
 import com.badlogic.gdx.controllers.Controller;
 import com.yourname.flixnet.Direction;
+import com.yourname.flixnet.GameState;
 import com.yourname.flixnet.interfaces.Attacker;
 
 public class Player extends Character implements Attacker {
 
 	Controller controller;
+	GameState context;
 	
-	public Player(Controller controller, int x, int y) {
+	public Player(Controller controller, int x, int y, GameState context) {
 		super("mage2.png", 8, 13, 10, new int[]{4,5,6,7}, new int[]{0,1,2,3}, new int[]{12,13,14,15}, new int[]{8,9,10,11});
+		this.context = context;
 		this.x = x;
 		this.y = y;
 		this.height = 8;
@@ -45,6 +48,9 @@ public class Player extends Character implements Attacker {
 			this.setDirection(Direction.DOWN);
 			this.y+=speed;
 		}
+		if (FlxG.keys.justPressed("SPACE")) {
+			context.interact(this);
+		}
 		
 		if (!(FlxG.keys.LEFT || FlxG.keys.RIGHT || FlxG.keys.UP || FlxG.keys.DOWN)) {
 			idle();
@@ -53,6 +59,10 @@ public class Player extends Character implements Attacker {
 	
 	public void onDisconnect() {
 		
+	}
+
+	public void displayText(String string) {
+		System.out.println(string);
 	}
 
 }
