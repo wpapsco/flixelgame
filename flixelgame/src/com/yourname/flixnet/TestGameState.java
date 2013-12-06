@@ -7,7 +7,7 @@ import com.badlogic.gdx.math.Vector3;
 public class TestGameState extends GameState {
 
 	public TestGameState() {
-		super("map1.tmx", "tileset2.png", 16, 16);
+		super("testMap1.tmx", "testingTiles.png", 32, 32);
 	}
 	
 	@Override

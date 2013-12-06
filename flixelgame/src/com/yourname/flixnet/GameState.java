@@ -77,6 +77,7 @@ public abstract class GameState extends FlxState implements ControllerListener {
 				}
 				add(layer);
 				layers.put(map.map.getLayers().get(i).getName(), layer);
+				FlxG.worldBounds.make(0, 0, layer.widthInTiles * this.tileWidth, layer.heightInTiles * this.tileHeight);
 			}
 		}
 	}
