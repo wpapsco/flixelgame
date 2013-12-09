@@ -9,11 +9,11 @@ import com.yourname.flixnet.mapping.objects.MapObject;
 
 public class PropertyTiledMap {
 	public Hashtable<String, String> properties;
-	public ArrayList<MapObject> mapObjects;
+	public Hashtable<String, MapObject> mapObjects;
 	public TiledMap map;
 	
 	public PropertyTiledMap(TiledMap map) {
 		this.map = map;
-		mapObjects = new ArrayList<MapObject>();
+		mapObjects = new Hashtable<String, MapObject>();
 	}
 }

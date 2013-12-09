@@ -37,7 +37,7 @@ public class PropertyMapLoader extends TmxMapLoader {
 				for (Element property : propertiesElement.getChildrenByName("property")) {
 					properties.put(property.getAttribute("name"), property.getAttribute("value", ""));
 				}
-				pMap.mapObjects.add(new MapObject(properties, rect));
+				pMap.mapObjects.put(object.getAttribute("name"), new MapObject(properties, rect, pMap));
 			}
 		}
 		return pMap;

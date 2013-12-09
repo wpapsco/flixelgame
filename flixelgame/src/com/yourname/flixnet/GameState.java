@@ -61,8 +61,9 @@ public abstract class GameState extends FlxState implements ControllerListener {
 		Parameters args = new Parameters();
 		args.yUp = false;
 		map = loader.loadProperties(mapFile, args);
-		for (int i = 0; i < map.mapObjects.size(); i++) {
-			this.add(map.mapObjects.get(i));
+		Enumeration<MapObject> e = map.mapObjects.elements();
+		while (e.hasMoreElements()) {
+			this.add(e.nextElement());
 		}
 		for (int i = 0; i < map.map.getLayers().getCount(); i++) {
 			FlxTilemap layer = new FlxTilemap();
@@ -130,7 +131,7 @@ public abstract class GameState extends FlxState implements ControllerListener {
 			Interactive in = interactives.get(i);
 			if (in instanceof MapObject) {
 				MapObject mo = (MapObject) in;
-				if (mo.area.overlaps(new FlxRect(player.x + player.offset.x , player.y + player.offset.y, player.width, player.height))) {
+				if (mo.area.overlaps(new FlxRect(player.x + player.offset.x, player.y + player.offset.y, player.width, player.height))) {
 					mo.onInteract(player);
 				}
 			}

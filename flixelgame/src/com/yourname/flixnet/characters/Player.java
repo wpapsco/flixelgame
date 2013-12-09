@@ -18,6 +18,8 @@ public class Player extends Character implements Attacker {
 	private FlxText txt;
 	public boolean canInteract = true;
 	private FlxTimer timer;
+	private int coin;
+	private FlxText coinText;
 	
 	public Player(Controller controller, int x, int y, GameState context) {
 		super("mage2.png", 8, 13, 10, new int[]{4,5,6,7}, new int[]{0,1,2,3}, new int[]{12,13,14,15}, new int[]{8,9,10,11});
@@ -27,6 +29,9 @@ public class Player extends Character implements Attacker {
 		this.height = 8;
 		this.offset.y = 8;
 		this.controller = controller;
+		coinText = new FlxText(0, FlxG.height - 12, 800, Integer.toString(coin));
+		context.add(coinText);
+		coinText.scrollFactor.make(0, 0);
 	}
 	
 	@Override
@@ -70,6 +75,15 @@ public class Player extends Character implements Attacker {
 		
 	}
 
+	public void addCoin(int coin) {
+		this.coin += coin;
+		coinText.setText(Integer.toString(this.coin));
+	}
+	
+	public int getCoin() {
+		return coin;
+	}
+	
 	public void displayText(String string) {
 		canInteract = false;
 		timer = new FlxTimer();

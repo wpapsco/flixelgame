@@ -1,31 +1,23 @@
 package com.yourname.flixnet.items;
 
+import org.flixel.FlxBasic;
 import org.flixel.FlxObject;
+import org.flixel.FlxSprite;
 
-public abstract class Item extends FlxObject {
+import com.yourname.flixnet.characters.Player;
 
+public abstract class Item extends FlxBasic {
+
+	private boolean enabled;
+	private FlxSprite equipImage;
+	
 	public Item() {
-		// TODO Auto-generated constructor stub
+		
 	}
 
-	public Item(float X) {
-		super(X);
-		// TODO Auto-generated constructor stub
+	public void onUse(Player player) {
+		
 	}
-
-	public Item(float X, float Y) {
-		super(X, Y);
-		// TODO Auto-generated constructor stub
-	}
-
-	public Item(float X, float Y, int Width) {
-		super(X, Y, Width);
-		// TODO Auto-generated constructor stub
-	}
-
-	public Item(float X, float Y, int Width, int Height) {
-		super(X, Y, Width, Height);
-		// TODO Auto-generated constructor stub
-	}
-
+	
+	
 }
