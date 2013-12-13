@@ -1,4 +1,4 @@
-package com.yourname.flixnet.mapping.objects;
+package com.yourname.flixnet.mapping;
 
 import java.util.Hashtable;
 
@@ -7,16 +7,16 @@ import org.flixel.FlxRect;
 import com.yourname.flixnet.GameState;
 import com.yourname.flixnet.characters.Player;
 import com.yourname.flixnet.interfaces.Interactive;
-import com.yourname.flixnet.mapping.PropertyTiledMap;
 
 public class MapObject implements Interactive {
 
 	private Hashtable<String, String> properties;
 	public FlxRect area;
 	public boolean enabled;
-	private PropertyTiledMap map;
+	public int callOrder = 0;
+	private CustomTiledMap map;
 	
-	public MapObject(Hashtable<String, String> properties, FlxRect area, PropertyTiledMap map) {
+	public MapObject(Hashtable<String, String> properties, FlxRect area, CustomTiledMap map) {
 		this.properties = properties;
 		this.area = area;
 		this.map = map;
@@ -24,6 +24,9 @@ public class MapObject implements Interactive {
 			enabled = Boolean.parseBoolean(properties.get("start_enabled"));
 		} else {
 			enabled = true;
+		}
+		if (properties.get("call_order") != null) {
+			callOrder = Integer.parseInt(properties.get("call_order"));
 		}
 	}
 

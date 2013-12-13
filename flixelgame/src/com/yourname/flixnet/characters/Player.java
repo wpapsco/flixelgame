@@ -10,6 +10,7 @@ import com.badlogic.gdx.controllers.Controller;
 import com.yourname.flixnet.Direction;
 import com.yourname.flixnet.GameState;
 import com.yourname.flixnet.interfaces.Attacker;
+import com.yourname.flixnet.items.Item;
 
 public class Player extends Character implements Attacker {
 
@@ -20,8 +21,9 @@ public class Player extends Character implements Attacker {
 	private FlxTimer timer;
 	private int coin;
 	private FlxText coinText;
+	private Item item;
 	
-	public Player(Controller controller, int x, int y, GameState context) {
+	public Player(Controller controller, float x, float y, GameState context) {
 		super("mage2.png", 8, 13, 10, new int[]{4,5,6,7}, new int[]{0,1,2,3}, new int[]{12,13,14,15}, new int[]{8,9,10,11});
 		this.context = context;
 		this.x = x;
@@ -68,6 +70,10 @@ public class Player extends Character implements Attacker {
 		
 		if (!(FlxG.keys.LEFT || FlxG.keys.RIGHT || FlxG.keys.UP || FlxG.keys.DOWN)) {
 			idle();
+		}
+		
+		if (FlxG.keys.justPressed("z")) {
+			item.onUse(this);
 		}
 	}
 	

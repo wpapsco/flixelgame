@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="orthogonal" width="30" height="20" tilewidth="32" tileheight="32">
  <properties>
-  <property name="StartX" value="896"/>
-  <property name="StartY" value="96"/>
+  <property name="StartX" value="5"/>
+  <property name="StartY" value="18"/>
  </properties>
  <tileset firstgid="1" name="testingTiles" tilewidth="32" tileheight="32">
   <image source="testingTiles.png" width="128" height="64"/>
@@ -21,6 +21,15 @@
   </properties>
   <data encoding="base64" compression="zlib">
    eJzllkEKwCAMBLe01P//uHgIBElko8UgDuyllyHSjRYAReUK5HFyE6kuQbwM4m2xvJo3yQvDG+FPb9a8O3sZVs2b1SPWawXGN9kTwPze8HZX69WeWa+md+a9fyrbK1hdOt072qkI3n3EeLPm3d3rZeSNw/b3A/kvA+o=
+  </data>
+ </layer>
+ <layer name="moveable blocks" width="30" height="20">
+  <properties>
+   <property name="block_layer" value="true"/>
+   <property name="collide" value="true"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFIMAx0A6AgsHijpEA6BXWo3E6CkbBKBgFIw8AAO2gACE=
   </data>
  </layer>
  <layer name="Characters" width="30" height="20">
@@ -49,6 +58,7 @@
   <object name="Chest 2 Money" x="896" y="32" width="32" height="48">
    <properties>
     <property name="add_coin" value="50"/>
+    <property name="call_order" value="1"/>
     <property name="disable_object" value="Chest 2 Money"/>
     <property name="display_text" value="Cool! A chest! I found 50 coin!"/>
     <property name="enable_object" value="Chest 2 No Money"/>
@@ -56,6 +66,7 @@
   </object>
   <object name="Chest 2 No Money" x="896" y="32" width="32" height="48">
    <properties>
+    <property name="call_order" value="0"/>
     <property name="display_text" value="Too bad there's no money here."/>
     <property name="start_enabled" value="false"/>
    </properties>

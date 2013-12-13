@@ -8,13 +8,12 @@ import com.badlogic.gdx.maps.tiled.TiledMap;
 import com.badlogic.gdx.maps.tiled.TmxMapLoader;
 import com.badlogic.gdx.utils.Array;
 import com.badlogic.gdx.utils.XmlReader.Element;
-import com.yourname.flixnet.mapping.objects.MapObject;
 
-public class PropertyMapLoader extends TmxMapLoader {
+public class CustomMapLoader extends TmxMapLoader {
 
-	public PropertyTiledMap loadProperties(String fileName, Parameters parameters) {
+	public CustomTiledMap loadProperties(String fileName, Parameters parameters) {
 		TiledMap map = this.load(fileName, parameters);
-		PropertyTiledMap pMap = new PropertyTiledMap(map);
+		CustomTiledMap pMap = new CustomTiledMap(map);
 		pMap.properties = new Hashtable<String, String>();
 		if (root.getChildByName("properties") != null) {
 			for (int i = 0; i < root.getChildByName("properties").getChildCount(); i++) {

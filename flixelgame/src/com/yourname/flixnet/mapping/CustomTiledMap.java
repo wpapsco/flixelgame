@@ -4,15 +4,14 @@ import java.util.Hashtable;
 
 import com.badlogic.gdx.maps.tiled.TiledMap;
 import com.yourname.flixnet.interfaces.Interactive;
-import com.yourname.flixnet.mapping.objects.MapObject;
 
 
-public class PropertyTiledMap {
+public class CustomTiledMap {
 	public Hashtable<String, String> properties;
 	public Hashtable<String, MapObject> mapObjects;
 	public TiledMap map;
 	
-	public PropertyTiledMap(TiledMap map) {
+	public CustomTiledMap(TiledMap map) {
 		this.map = map;
 		mapObjects = new Hashtable<String, MapObject>();
 	}

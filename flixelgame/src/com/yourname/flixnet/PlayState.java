@@ -12,8 +12,8 @@ import com.badlogic.gdx.maps.MapLayers;
 import com.badlogic.gdx.maps.tiled.TiledMap;
 import com.badlogic.gdx.maps.tiled.TmxMapLoader;
 import com.badlogic.gdx.maps.tiled.TmxMapLoader.Parameters;
-import com.yourname.flixnet.mapping.PropertyMapLoader;
-import com.yourname.flixnet.mapping.PropertyTiledMap;
+import com.yourname.flixnet.mapping.CustomMapLoader;
+import com.yourname.flixnet.mapping.CustomTiledMap;
 
 public class PlayState extends FlxState {
 	//this is a comment from will
@@ -30,14 +30,14 @@ public class PlayState extends FlxState {
 	FlxTilemap floor;
 	FlxTilemap walls;
 
-	PropertyTiledMap map;
+	CustomTiledMap map;
 	FlxTilemap _level1;
 	FlxTilemap _level1wall;
 	float unitScale = 16 / 2f;
 
 	@Override
 	public void create() {
-		PropertyMapLoader loader = new PropertyMapLoader();
+		CustomMapLoader loader = new CustomMapLoader();
 		Parameters args = new Parameters();
 		args.yUp = false;
 		
